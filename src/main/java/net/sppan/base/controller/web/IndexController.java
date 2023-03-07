@@ -20,10 +20,10 @@ public class IndexController extends BaseController{
 	
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
-	@RequestMapping(value={"/","/index"})
-	public String index(){
-		List<User> users = userService.findAll();
-		logger.debug(users.toString());
-		return "index";
-	}
+//	@RequestMapping(value={"/","/index"})
+//	public String index(){
+//		List<User> users = userService.findAll();
+//		logger.debug(users.toString());
+//		return "index";
+//	}
 }

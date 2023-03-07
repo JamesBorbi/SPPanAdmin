@@ -45,12 +45,12 @@
                         </div>
                     </li>
                     <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                        <span class="ng-scope">分类</span>
+                        <span class="ng-scope">MAIN NAVIGATION</span>
                     </li>
                     <li>
                         <a class="J_menuItem" href="${ctx!}/admin/welcome">
                             <i class="fa fa-home"></i>
-                            <span class="nav-label">主页</span>
+                            <span class="nav-label">首页</span>
                         </a>
                     </li>
                     <li>
@@ -77,6 +77,113 @@
                          </@shiro.hasPermission>
                         </ul>
                     </li>
+
+
+
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa fa-cog"></i>
+                            <span class="nav-label">配置管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">赔率设置</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">链接配置</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">预设订单管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">跟单管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">会员管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa fa-cog"></i>
+                            <span class="nav-label">会员操作管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">上下分审核</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">订单查询</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">历史记录</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">开奖历史记录</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">登陆频繁解锁</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">返水管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">吃码额度设定</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">吃码盈亏</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">备份微信登陆</span>
+                        </a>
+                    </li>
+
+
+
+
+
+
+
+
                     <li class="line dk"></li>
                 </ul>
             </div>
