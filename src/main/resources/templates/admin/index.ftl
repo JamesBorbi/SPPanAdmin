@@ -83,7 +83,7 @@
 
 
                     <li>
-                        <a class="J_menuItem" href="${ctx!}/admin/welcome">
+                        <a class="J_menuItem" href="${ctx!}/back">
                             <i class="fa fa fa-cog"></i>
                             <span class="nav-label">配置管理</span>
                         </a>

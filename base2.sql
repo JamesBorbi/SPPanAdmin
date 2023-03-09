@@ -48,7 +48,7 @@ CREATE TABLE `tb_short_link` (
   `is_delete` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除：0否 1是',
   `short_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '短链接:0关闭 1短链接1 2短链接2',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='默认字段表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='链接配置表';
 CREATE TABLE `tb_preset_order` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `create_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' COMMENT '创建时间',

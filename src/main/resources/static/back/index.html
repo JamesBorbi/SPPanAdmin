@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0038)http://249017.pl8.cc/sys/amount-record -->
+<!-- saved from url=(0025)http://249017.pl8.cc/?v=1 -->
 <html style="height: auto; min-height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	        <title>上下分审核</title>
+	        <title>首页</title>
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Tell the browser to be responsive to screen width -->
@@ -12,21 +12,29 @@
     		
     		
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="./上下分审核_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./index/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="./上下分审核_files/font-awesome.min.css">
+  <link rel="stylesheet" href="./index/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="./上下分审核_files/ionicons.min.css">
+  <link rel="stylesheet" href="./index/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="./上下分审核_files/AdminLTE.min.css">
+  <link rel="stylesheet" href="./index/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="./上下分审核_files/_all-skins.min.css">
+  <link rel="stylesheet" href="./index/_all-skins.min.css">
   
   <!-- Google Font -->
     	
+            <link type="text/css" rel="stylesheet" href="./首页_files/jquery-jvectormap.css">	
+            <link type="text/css" rel="stylesheet" href="./首页_files/all.css">	
     		
     		
+    		<style>
+	.progress-description, .info-box-text{
+		display:inline;
+	}
+	</style>
+
 	         
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,11 +44,11 @@
 	<![endif]-->
 
 	<!-- jQuery 3 -->
-	<script src="./上下分审核_files/jquery.min.js"></script>
+	<script src="./index/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
-	<script src="./上下分审核_files/bootstrap.min.js"></script>
+	<script src="./index/bootstrap.min.js"></script>
 
-    <script src="./上下分审核_files/template-web.js"></script>
+    <script src="./index/template-web.js"></script>
 	         
 	    	 <script>
 	              webCfg = {
@@ -50,7 +58,7 @@
 	              outerfileServer: ""
 	            };
 	 		</script>
-	    </head>
+	    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;box-sizing: content-box;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
 	    <body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
 	     	
 	<div class="wrapper" style="height: auto; min-height: 100%;">
@@ -68,11 +76,11 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="http://249017.pl8.cc/sys/amount-record#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <a href="http://249017.pl8.cc/?v=1#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <p style="padding-top:15px;display: inline-block;">
-        <small style="color:#fff; font-size: 12px;">到期时间: <span id="expire">2023-03-02 09:00:00</span></small>
+        <small style="color:#fff; font-size: 12px;">到期时间: <span id="expire">javascript:new Date();</span></small>
         <a style="display: inline-block; margin-left: 1px; padding: 2px 4px;" href="javascript:void(0);" class="btn btn-default btn-flat" data-toggle="modal" data-target="#modal-changepwd">
           修改密码
         </a>
@@ -82,15 +90,15 @@
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="http://249017.pl8.cc/sys/amount-record#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="./上下分审核_files/user2-160x160.jpg" class="user-image" alt="User Image">
+            <a href="http://249017.pl8.cc/?v=1#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="./首页_files/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">zz3375</span>
               <input type="hidden" id="userId" value="1630207614862258177">
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="./上下分审核_files/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="./首页_files/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
 zz3375                </p>
@@ -189,83 +197,83 @@ zz3375                </p>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu tree" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li>
-          <a href="http://249017.pl8.cc/sys/dashboard">
+        <li class="active">
+          <a href="/back/index.html">
             <i class="fa fa-dashboard"></i> <span>首页</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/config">
+          <a href="/back/config.html">
             <i class="fa fa-cog"></i> <span>配置管理</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/config/limit">
+          <a href="/back/odds.html">
             <i class="fa fa-cog"></i> <span>赔率设置</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/config/changeDeviceId">
+          <a href="/back/link.html">
             <i class="fa fa-link"></i> <span>链接配置</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/fake-order">
+          <a href="/back/preset.html">
             <i class="fa fa-cog"></i> <span>预设订单管理</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/follow-order">
+          <a href="/back/with.html">
             <i class="fa fa-clone"></i> <span>跟单列表</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/member">
+          <a href="/back/member.html">
             <i class="fa fa-users"></i> <span>会员管理</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/operator">
+          <a href="/back/operate.html">
             <i class="fa fa-users"></i> <span>会员操作管理</span>
           </a>
         </li>
-        <li class="active">
-          <a href="http://249017.pl8.cc/sys/amount-record">
+        <li>
+          <a href="/back/subaudit.html">
             <i class="fa fa-cny"></i> <span>上下分审核</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/order-info">
+          <a href="/back/order.html">
             <i class="fa fa-shopping-cart"></i> <span>订单查询</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/order-info/history">
+          <a href="/back/history.html">
             <i class="fa fa-history"></i> <span>历史记录</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/history">
+          <a href="/back/historyrecord.html">
             <i class="fa fa-database"></i> <span>开奖历史记录</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/config/proxy">
+          <a href="/back/lock.html">
             <i class="fa fa-unlock"></i> <span>登录频繁解锁</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/member-discount">
+          <a href="/back/return.html">
             <i class="fa fa-backward"></i> <span>返水管理</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/config/chima">
+          <a href="/back/eatset.html">
             <i class="fa fa-cog"></i> <span>吃码额度设定</span>
           </a>
         </li>
         <li>
-          <a href="http://249017.pl8.cc/sys/chima-record">
+          <a href="/back/eatloss.html">
             <i class="fa fa-balance-scale"></i> <span>吃码盈亏</span>
           </a>
         </li>
@@ -279,238 +287,434 @@ zz3375                </p>
     <!-- /.sidebar -->
   </aside>
 		
-
-  <!-- =============================================== -->
-    <!-- Content Wrapper. Contains page content -->
+	
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="min-height: 922.75px;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        积分列表
-        <small>上下分审核</small>
-        <span id="sumInfo" style="color:#FF0000">0 - 0 = 0</span>
+        Dashboard
+        <small>Version 2.0</small>
       </h1>
-      <!--<ol class="breadcrumb">
-        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Users</li>
-      </ol>-->
+      <ol class="breadcrumb">
+        <li><a href="http://249017.pl8.cc/?v=1#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
     </section>
 
     <!-- Main content -->
-    <div class="form-group" style="margin: 30px 0px; display: block">
-        <div class="form-group">
-            <div class="col-sm-2">
-                <input id="memberNickName" class="form-control" placeholder="昵称">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-sm-2">
-            <select name="timeType" class="form-control" id="timeType" placeholder="类型">
-                <option value="0">全部</option>
-                <option value="1" selected="">今天</option>
-                <option value="2">昨天</option>
-                <option value="3">本周</option>
-            </select>
-            </div>
-        </div>
-        <button id="search" type="submit" class="btn btn-info">搜索</button>
-    </div>
-    <section class="content" style="margin-top: 20px;">
+    <section class="content">
+      <!-- Info boxes -->
       <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
-                <thead>
-                <tr role="row"><th class="sorting_disabled wordwrap" rowspan="1" colspan="1">昵称</th><th class="sorting_disabled" rowspan="1" colspan="1">分数</th><th class="sorting_disabled" rowspan="1" colspan="1">类型</th><th class="sorting_disabled" rowspan="1" colspan="1">状态</th><th class="sorting_disabled" rowspan="1" colspan="1">创建时间</th><th class="sorting_disabled" rowspan="1" colspan="1">操作</th></tr>
-                </thead>
-                <tbody>
-                
+	      
+      	<div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box" data-url="/sys/member">
+            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
-                </tbody>
-                <tfoot>
-				<tr><th class="wordwrap" rowspan="1" colspan="1">昵称</th><th rowspan="1" colspan="1">上分</th><th rowspan="1" colspan="1">类型</th><th rowspan="1" colspan="1">状态</th><th rowspan="1" colspan="1">创建时间</th><th rowspan="1" colspan="1">操作</th></tr>
-                </tfoot>
-              </table></div></div><div class="row"><div class="col-sm-5"><div class="dataTables_info" id="example2_info" role="status" aria-live="polite"></div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"></div></div></div></div>
+            <div class="info-box-content">
+              <span class="info-box-text">会员总数</span>
+              <span class="info-box-number">10</span>
             </div>
-            <!-- /.box-body -->
+            <!-- /.info-box-content -->
           </div>
-          <!-- /.box -->
+          <!-- /.info-box -->
         </div>
         <!-- /.col -->
+      
+         <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">在线会员总数</span>
+              <span class="info-box-number">0</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box" data-url="/sys/amount-record">
+            <span class="info-box-icon bg-red"><i class="ion ion-card"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">未审核上分请求</span>
+              <span class="info-box-number">0</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+		  <div class="col-md-3 col-sm-6 col-xs-12">
+			  <div class="info-box" data-url="/sys/amount-record">
+				  <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+				  <div class="info-box-content">
+
+					  <span class="info-box-number">
+						  <label class="info-box-text">
+							  <div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="autoDiscount" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	关盘后自动反水
+						  </label>
+						  <label class="info-box-text">
+							  <div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="openReplyHls" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	网页群回流水
+						  </label>
+						  <label class="info-box-text">
+							  <div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="openCancel" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	开启退码
+						  </label>
+						  <label class="info-box-text">
+							  <div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image tuima" data-field="groupImage" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	群发图
+						  </label>
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image zhuanfatu" data-field="forwardImage" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	转发图
+						  </label>
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="privateImage" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	私发图
+						  </label>
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="privateMode" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	开启私聊
+						  </label>
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="pullEnable" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	网页群
+						  </label>
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image saoma" data-field="wechatProxyEnabled" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	扫码
+						  </label>
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="dailyClear" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	每天自动清理流水
+						  </label>
+
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image wangka" data-field="wangkaEnable" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	网咔模式
+						  </label>
+
+						  <label class="info-box-text">
+						  	<div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal image" data-field="delayOrder" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+						  	延迟跟单
+						  </label>
+
+
+					  </span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+		  </div>
+		  <!-- /.col -->
+
       </div>
       <!-- /.row -->
+
+      <div class="row">
+	     
+      	<div class="col-md-8 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="ion ion-chatbubbles"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">微信</span>
+              <span class="info-box-number">
+	             <button class="btn btn-small btn-primary" onclick="userAction(&#39;login&#39;)">登录微信</button>
+              </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      
+      <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="ion ion-power"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">启动状态</span>
+              <div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal startup" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      
+      </div>
+      <!-- /.row -->
+      
     </section>
     <!-- /.content -->
-
   </div>
   <!-- /.content-wrapper -->
-
-	
+ 
     <div class="modal fade" id="modal-default">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span></button>
-            <h4 class="modal-title">提示信息</h4>
-          </div>
-          <div class="modal-body">
-            <p></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
-          </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">提示信息(<span id="tip" style="color:#F00; font-size:15px"></span>)</h4>
+                </div>
+                <div id="modal-body" class="modal-body" style="text-align:center">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="modal-ok" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
+        <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
 
-<style>
-    .wordwrap{
-        word-break: break-all;
-    }
-</style>
-<!-- page script -->
-<script>
-    $(function () {
-        $("#search").click(function() {
-          var param = {};
-          param.type = $("#selectType").val()
-          param.memberNickName = $("#memberNickName").val()
-          param.timeType = $("#timeType").val();
-          $.ajax({
-            url: "/sys/amount-record/sum",
-            type: "POST",
-            data: param,
-            success: function (res) {
-              $("#sumInfo").html(
-                res.plus + " - " + res.minus + " = " + res.current
-              )
-            }
-          });
-          $("#example2").DataTable().ajax.reload();
-        })
-        //$("#example2").DataTable();
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "serverSide": true,
-            "ordering": false,
-            "info": true,
-            "autoWidth": false,
-            "columnDefs": [
-               {
-                   "render": function(data, type, row) {
-                        return "<td style='word-break: break-all;'>" + row['memberNickName'] + "</td>";
-                   },
-                   "targets": 0
-                },
-                {
-                    "render": function ( data, type, row ) {
-                       return ((data == 2 || data == 5 || data == 10) ? "-" : "") + row["amount"];
-                    },
-                    "targets": 1
-                },
-                {
-                    "render": function ( data, type, row ) {
-                       var status = '';
-                       if(data == 0){
-                           status = '未确认';
-                       }else if(data == 1){
-                           status = '已确认';
-                       }else{
-                           status = '作废';
-                       }
-                       return status;
-                    },
-                    "targets": 3
-                },
-                {
-                    "render": function ( data, type, row ) {
-                        if(data == 0){
-                            return '<button type="button" class="btn-sm btn-warning" data-toggle="modal" data-target="#modal-User" onclick="userAction(\''+row["id"]+'\',\'yes\')">\n' +
-                                '                      <i class="fa fa-check"></i>\n' +
-                                '                      </button>\n' +
-                                '                      <button type="button" class="btn-sm btn-danger" onclick="userAction(\''+row["id"]+'\',\'no\')">\n' +
-                                '                      <i class="fa fa-close"></i>\n' +
-                                '                      </button>';
-                        }
-                        return '';
-                    },
-                    "targets": 5
-                }
-            ],
-            "ajax": function(data, callback, settings){
-                //封装请求参数
-                var param = {};
-                param.size = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候
-                param.current = (data.start / data.length) + 1;//开始的记录序号
-                param.type = $("#selectType").val()
-                param.timeType = $("#timeType").val()
-                param.memberNickName = $("#memberNickName").val()
-                //ajax请求数据
-                $.ajax({
-                    type: "POST",
-                    url: "/sys/amount-record/page",
-                    cache: false,  //禁用缓存
-                    data: param,  //传入组装的参数
-                    dataType: "json",
-                    success: function (result) {
-                        //封装返回数据
-                        var returnData = {};
-                        returnData.draw = data.draw || 1;//这里直接自行返回了draw计数器,应该由后台返回
-                        returnData.recordsTotal = result.total;//返回数据全部记录
-                        returnData.recordsFiltered = result.total;//后台不实现过滤功能，每次查询均视作全部结果
-                        returnData.data = result.rows;//返回的数据列表
-                        //调用DataTables提供的callback方法，代表数据已封装完成并传回DataTables进行渲染
-                        //此时的数据需确保正确无误，异常判断应在执行此回调前自行处理完毕
-                        callback(returnData);
-                    }
-                });
-            },
-            columns: [
-                {
-                  "data": "memberNickName",
-                  "class": "wordwrap"
-                },
-                { "data": "type" },
-                { "data": "typeName" },
-                { "data": "success" },
-                { "data": "createTime" },
-                { "data": "success" },
-            ]
-        });
-        
-    });
-</script>
-<script>
-function userAction(id,action)
-{
-  var base_url = window.location.origin;
-  $.ajax({
-      type: 'POST',
-      url: base_url+'/sys/amount-record/check',
-      data: {id:id, action:action},
-      success: function (data) {
-        location.reload();
-      }
-    });
-}
-</script>
+
+	<div>
+		<div class="modal fade" id="confirmModel" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+
+						<h2 class="modal-title">
+							提示
+						</h2>
+						<h4 id="confirmLabel">不换微信号，请点立即登录或二次扫码登录微信，是否要更换微信号做机器人?</h4>
+					</div>
+					<input type="hidden" id="dataId">
+					<div class="modal-footer form-inline">
+						<input type="button" class="btn btn-info  form-control" data-dismiss="modal" aria-hidden="true" value="取消">
+						<input type="button" class="btn btn-danger form-control" value="确认" id="btnConfirm" data-dismiss="modal">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+    
+  <script>
+  	$(function(){
+  		$('.info-box').on('click',function(){
+  			var url = $(this).data('url');
+  			if(url){
+  				window.location.href = url;
+  			}
+  		})
+  		
+  		//iCheck for checkbox and radio inputs
+  		var $checkbox = $('input[type="checkbox"].startup');
+	    $checkbox.iCheck({
+	      checkboxClass: 'icheckbox_minimal-blue'
+	    })
+	    
+	    $checkbox.on('ifClicked',function(e){
+	    	var checked = e.target.checked;
+    		$.post('/sys/dashboard/'+(checked?'stop':'start'),{},function(ret){
+    			if(ret.succeed){
+    				if(checked){
+    					//$checkbox.iCheck("uncheck");
+    				}else{
+    					//$checkbox.iCheck("check");
+    				}
+    				alert('操作成功');
+    			}else{
+    				alert(ret.message);
+					if(checked){
+						$checkbox.iCheck("check");
+					}else{
+						$checkbox.iCheck("uncheck");
+					}
+    			}
+    		},'json');
+	    });
+
+	    var $imageCheckbox = $('input[type="checkbox"].image');
+		$imageCheckbox.iCheck({
+			checkboxClass: 'icheckbox_minimal-blue'
+		})
+
+		$imageCheckbox.on('ifClicked',function(e){
+			if ($(this).hasClass("saoma") && e.target.checked) {
+				location.reload();
+				return;
+			}
+
+			if ($(this).hasClass("zhuanfatu") && !e.target.checked) {
+				location.reload();
+				return;
+			}
+
+			var param = {};
+			param.id = "1630207614879035393";
+			param[$(this).data('field')] = e.target.checked?"0":"1";
+
+			$.post('/sys/config/save',param,function(ret){
+				if (ret.succeed == false) {
+					alert(ret.message);
+				}
+				console.log(ret);
+				location.href = "/?v=1";
+			},'json');
+		});
+
+
+  	});
+  	
+  	function checkQr(){
+  		$.post('/sys/wechat/checkQr',{},function(ret){
+			if(ret.succeed && (ret.message == '登陆成功' || ret.data.status == 'Confirmed' || ret.data.status == '2' || ret.code == 1000)){
+				window.location.href = window.location.href;
+			}else{
+				setTimeout(checkQr, 1000);
+			}
+		}, 'json');
+  	}
+
+	function checkQrAsync(){
+		$.post('/sys/wechat/checkQr-async',{},function(ret){
+			if(ret.succeed){
+				window.location.href = window.location.href;
+			}else{
+				setTimeout(checkQrAsync, 1000);
+			}
+		}, 'json');
+	}
+
+	function getQueryVariable(url, variable) {
+		var query = url.substring(url.indexOf('?')+1)
+		var vars = query.split("&");
+		for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split("=");
+			if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+
+	function showConfirmModel(that, confirm, title, callback) {
+		$('#dataId').val($(that).attr('lang'));
+		$('#confirmLabel').html(title);
+		$('#btnConfirm').on('click', function() {
+			$.post('/sys/wechat/unbind', {}, function (ret) {
+				window.location.href = window.location.href;
+			}, 'json');
+		});
+		$('#confirmModel').modal('show');
+	}
+
+	function login(){
+		$.post('/sys/wechat/login',{},function(ret){
+			if(ret.succeed){
+				if(ret.async){
+					loginAsync();
+					return;
+				}
+				if(ret.data.qrCode === null){
+					alert("二维码获取失败，请重新获取");
+				}else{
+					$('#modal-body').html('');
+					$('#modal-body').append($('<img class="img-responsive  center-block"/>').attr('src', ret.data.qrCode.indexOf('weixin.qq.com')!=-1?'/qr?url='+ret.data.qrCode:ret.data.qrCode));
+					$('#modal-default').modal('show');
+					$('#tip').html('扫描并确认登录后，点击确定');
+					$('#modal-ok').unbind('click');
+					checkQr();
+				}
+			}else{
+				alert(ret.message);
+			}
+		},'json');
+	}
+
+	function loginAsync(){
+  		$.post("/sys/wechat/login-async",{},function(ret){
+  			if(ret.succeed){
+				$('#modal-body').html('');
+				$('#modal-body').append($('<img class="img-responsive  center-block"/>').attr('src', ret.data));
+				$('#modal-default').modal('show');
+				$('#tip').html('扫描并确认登录后，点击确定');
+				$('#modal-ok').unbind('click');
+				checkQrAsync();
+			}else{
+  				setTimeout(loginAsync, 1000);
+			}
+		},'json')
+	}
+
+  	function userAction(action){
+  		if(action == 'login'){
+	  		login();
+  		}else if(action == 'bindGroup'){
+  			$.post('/sys/wechat/getGroupList',{},function(ret){
+  				if(ret.code == '1000'){
+  					var content = '<select id="groupList">';
+  					$.each(ret.data.group, function(index,ele){
+  						content += '<option value="'+ele.userName+'">'+(ele.nickName?ele.nickName:ele.userName)+'</option>';
+  					});
+  					content += '</select>';
+  					$('#modal-body').html('');
+  					$('#modal-body').append(content);
+  					$('#modal-default').modal('show');
+  					$('#tip').html('微信群需保存到通讯录');
+  					$('#modal-ok').unbind('click');
+	  				$('#modal-ok').bind('click', function(){
+	  					var text = $('#groupList').find("option:selected").text();
+	  					var val = $('#groupList').find("option:selected").val();
+	  					$.post('/sys/wechat/bindGroup',{groupId:val,groupName:text},function(ret){
+	  						window.location.href = window.location.href;
+	  					}, 'json');
+	  				});
+  				}else{
+  					alert(ret.message);
+  				}
+  			}, 'json');
+  		}else if(action == 'secondlogin'){
+  			$.post('/sys/wechat/'+action,{},function(ret){
+  				if(ret.succeed || ret.code == 0 || ret.code == 1000){
+  					if(ret.code == 1000){
+  						location.reload();
+					}else{
+						checkQr();
+					}
+  				}else{
+  					//alert(ret.message);
+					login();
+  				}
+  			}, 'json');
+  		}else if(action == 'unbind'){
+			showConfirmModel();
+		}else{
+  			$.post('/sys/wechat/'+action,{},function(ret){
+  				/*if(ret.succeed || ret.code == 0){
+  					window.location.href = window.location.href;
+  				}else{
+  					alert(ret.message);
+  				}*/
+				window.location.href = window.location.href;
+  			}, 'json');
+  		}
+  	}
+  </script>
+  
 		
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="http://249017.pl8.cc/sys/amount-record#control-sidebar-theme-demo-options-tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li><li><a href="http://249017.pl8.cc/sys/amount-record#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="http://249017.pl8.cc/sys/amount-record#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      <li class="active"><a href="http://249017.pl8.cc/?v=1#control-sidebar-theme-demo-options-tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li><li><a href="http://249017.pl8.cc/?v=1#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="http://249017.pl8.cc/?v=1#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
@@ -786,12 +990,16 @@ function userAction(id,action)
 	</div>
 	<!-- ./wrapper -->
 	        
-            <script type="text/javascript" src="./上下分审核_files/adminlte.min.js"></script>	
-            <script type="text/javascript" src="./上下分审核_files/fastclick.js"></script>	
-            <script type="text/javascript" src="./上下分审核_files/jquery.slimscroll.min.js"></script>	
-            <script type="text/javascript" src="./上下分审核_files/demo.js"></script>	
-            <script type="text/javascript" src="./上下分审核_files/jquery.dataTables.min.js"></script>	
-            <script type="text/javascript" src="./上下分审核_files/dataTables.bootstrap.min.js"></script>	
+            <script type="text/javascript" src="./index/adminlte.min.js"></script>
+            <script type="text/javascript" src="./index/fastclick.js"></script>
+            <script type="text/javascript" src="./index/jquery.slimscroll.min.js"></script>
+            <script type="text/javascript" src="./index/demo.js"></script>
+            <script type="text/javascript" src="./index/jquery.sparkline.min.js"></script>
+            <script type="text/javascript" src="./index/jquery-jvectormap-1.2.2.min.js"></script>
+            <script type="text/javascript" src="./index/jquery-jvectormap-world-mill-en.js"></script>
+            <script type="text/javascript" src="./index/Chart.js"></script>
+            <script type="text/javascript" src="./index/dashboard2.js"></script>
+            <script type="text/javascript" src="./index/icheck.min.js"></script>
 	        
 	        
 	        
