@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://xn-%2D4gq62f52gdss.com/#/plan/6 -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./index/components.chunk.css">
+    <link rel="stylesheet" href="./index/umi.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#0665d0">
+    <title>五号停机坪</title>
+
+    <script type="text/javascript">window.routerBase = "/";</script>
+    <script type="text/javascript">
+        window.settings = {
+            title: '一元机场',
+            theme_path: '/theme/v2board/assets/',
+            theme: {
+                sidebar: 'light',
+                header: 'dark',
+                color: 'default',
+            },
+            version: '1.6.0',
+            background_url: '',
+            description: '',
+            i18n: [
+                'zh-CN',
+                'en-US',
+                'ja-JP',
+                'vi-VN',
+                'ko-KR',
+                'zh-TW'
+            ],
+            logo: ''
+        }
+
+
+
+
+        // 构建请求URL
+<!--        const baseUrl = window.location.protocol + '//' + window.location.host;-->
+<!--        const apiUrl = '/body';-->
+<!--        const requestData = { price: '1.00', supplier: '五号停机坪' };-->
+
+<!--        // 发送POST请求-->
+<!--        fetch(apiUrl, {-->
+<!--          method: 'POST',-->
+<!--          body: JSON.stringify(requestData),-->
+<!--          headers: {-->
+<!--            'Content-Type': 'application/json'-->
+<!--          }-->
+<!--        })-->
+<!--        .then(response => response.json())-->
+<!--        .then(data => {-->
+<!--          // 将响应数据写入body-->
+<!--          alert(JSON.stringify(data));-->
+<!--          const body = document.getElementsByTagName('body')[0];-->
+<!--          body.innerHTML = data;-->
+<!--        })-->
+<!--        .catch(error => console.error(error));-->
+
+
+
+
+
+<!--            $.ajax({-->
+<!--            type:"post",-->
+<!--            url:"/list",-->
+<!--            data:{},-->
+<!--            async: false,-->
+<!--            success:function (data) {-->
+<!--                var str="";-->
+<!--                for (i in data) {-->
+<!--                    str += "<tr>" +-->
+<!--                        "<td>"+"<input type=\"checkbox\" />"+"</td>"+-->
+<!--						"<td align='center'>" + data[i].id + "</td>" +-->
+<!--                        "<td align='center'>" + data[i].command + "</td>" +-->
+<!--                        "<td align='center'>" + data[i].description + "</td>" +-->
+<!--							"<td>\n" +-->
+<!--                        "<a href=\"#\">修改</a>\n" +-->
+<!--                        "<a href=\"#\">删除</a>\n" +-->
+<!--                        "</td>"-->
+<!--                        "</tr>";-->
+<!--                }-->
+<!--                document.getElementById("tbodydata").innerHTML=str;-->
+<!--            }-->
+<!--        });-->
+
+    </script>
+    <script src="./index/zh-CN.js" type="text/javascript"></script>
+    <script src="./index/zh-TW.js" type="text/javascript"></script>
+    <script src="./index/en-US.js" type="text/javascript"></script>
+    <script src="./index/ja-JP.js" type="text/javascript"></script>
+    <script src="./index/vi-VN.js" type="text/javascript"></script>
+    <script src="./index/ko-KR.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./index/default.css">
+</head>
+
+<body>
+<!--    <form id='paying' action='https://pay.zzyun.com/submit.php/submit.php' method='post'>-->
+<!--        <input  name='money' value='1.00'/>-->
+<!--        <input type='hidden' name='name' value='五号停机坪'/>-->
+<!--        <input type='hidden' name='notify_url' value='http://pay.zzyun.com/notify_url.php'/>-->
+<!--        <input type='hidden' name='out_trade_no' value='1679757469349'/>-->
+<!--        <input type='hidden' name='pid' value='11591'/>-->
+<!--        <input type='hidden' name='return_url' value='http://pay.zzyun.com/return_url.php'/>-->
+<!--        <input type='hidden' name='type' value='alipay'/>-->
+<!--        <input type='hidden' name='sign_type' value='MD5'/>-->
+<!--        <input type='hidden' name='sign' value='838aec78d0cc17f287c4cd0d4d75f658'/>-->
+<!--        <input type='submit' value='正在跳转'>-->
+<!--    </form>-->
+<!--        <script>document.forms['paying'].submit();</script>-->
+
+<h1 th:text="${message}"></h1>
+<div class="col-sm-8">
+    <input id="nickName" name="nickName" class="form-control" type="text" value=#[[$user.nickName$]]#>
+</div>
+<span value="${user.nickName}"></span>
+<p th:text="${user.nickName}"></p>
+<a href="/bodyw?price=1.00&supplier=五号停机坪">
+<button type="button"
+        class="btn btn-block btn-primary"><span><i class="far fa-check-circle"></i>
+                                        下单</span></button>
+</a>
+</body>
+<div id="vimeo-record-extension"></div>
+
+</html>

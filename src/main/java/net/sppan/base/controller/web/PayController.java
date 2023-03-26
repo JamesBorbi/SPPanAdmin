@@ -5,20 +5,27 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.swing.ScreenUtil;
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.RandomUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.URLUtil;
 import cn.hutool.crypto.asymmetric.Sign;
 import cn.hutool.crypto.digest.MD5;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import com.alibaba.fastjson.JSON;
+import net.sppan.base.common.JsonResult;
 import net.sppan.base.controller.BaseController;
 import net.sppan.base.entity.User;
 import net.sppan.base.service.IUserService;
+import net.sppan.base.vo.PayDto;
+import net.sppan.base.vo.PayResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -31,20 +38,82 @@ public class PayController extends BaseController{
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	@RequestMapping(value={"/pay"})
-	public String pay(){
+	public String pay(String price,String supplier,Model model){
+		//记得安全校验
 		List<User> users = userService.findAll();
 		logger.debug(users.toString());
-		return "/yyjc/我的工单.html";
+
+		PayDto dto = new PayDto();
+		dto.setPrice(price);
+		dto.setSupplier(supplier);
+		PayResp resp = this.getSign(dto);
+
+		model.addAttribute("price", resp.getMoney());
+		model.addAttribute("supplier", resp.getName());
+		model.addAttribute("sign", resp.getSign());
+		model.addAttribute("outTradeNo", resp.getOutTradeNo());
+		return "/yyjc/pay";
 	}
 
 
-	public static void main(String[] args) {
+	public PayResp getSign(PayDto dto){
+		String url = "https://pay.zzyun.com/submit.php";//支付地址
+		String pid = "11591";//商户id
+		String type = "alipay";//支付类型
+		String outTradeNo = DateUtil.format(DateUtil.date(), DatePattern.PURE_DATETIME_PATTERN) + RandomUtil.randomNumbers(5);//商户单号
+		String notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
+		String returnUrl = "http://pay.zzyun.com/return_url.php";//跳转地址
+		String name = dto.getSupplier();//商品名
+		String money = dto.getPrice();//价格:"1.00"
+		String signType = "MD5";//签名类型
+		String key = "mmalIem77fX3E7357E3eE4XHmnaLxXMZ";//商户密钥
 
-		getPayPage("1.00","五号停机坪");
 
+
+		//参数存入 map
+		Map<String,String> sign = new HashMap<>();
+		sign.put("pid",pid);
+		sign.put("type",type);
+		sign.put("out_trade_no",outTradeNo);
+		sign.put("notify_url",notifyUrl);
+		sign.put("return_url",returnUrl);
+		sign.put("name",name);
+		sign.put("money",money);
+
+		//根据key升序排序
+		sign = sortByKey(sign);
+
+		String signStr = "";
+
+		//遍历map 转成字符串
+		for(Map.Entry<String,String> m :sign.entrySet()){
+			signStr += m.getKey() + "=" +m.getValue()+"&";
+		}
+
+		//去掉最后一个 &
+		signStr = signStr.substring(0,signStr.length()-1);
+
+		//最后拼接上KEY
+		signStr += key;
+
+		//转为MD5
+		signStr = DigestUtils.md5DigestAsHex(signStr.getBytes());
+
+		sign.put("sign_type",signType);
+		sign.put("sign",signStr);
+
+
+		PayResp resp = new PayResp();
+		resp.setOutTradeNo(outTradeNo);
+		resp.setMoney(dto.getPrice());
+		resp.setName(name);
+		resp.setSign(signStr);
+
+		return resp;
 	}
 
-	public static void getPayPage(String price,String supplier){
+
+	public void getPayPage(String price,String supplier){
 		String url = "https://pay.zzyun.com/submit.php";//支付地址
 		String pid = "11591";//商户id
 		String type = "alipay";//支付类型
