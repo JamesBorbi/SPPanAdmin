@@ -18,10 +18,12 @@ $("#submitBtn").click(function() {
     <form id='paying' action='https://pay.zzyun.com/submit.php/submit.php' method='post'>
         <input type='hidden' name='money' th:value="${price}"/>
         <input type='hidden' name='name' th:value="${supplier}"/>
-        <input type='hidden' name='notify_url' value='http://pay.zzyun.com/notify_url.php'/>
+<!--        <input type='hidden' name='notify_url' value='http://pay.zzyun.com/notify_url.php'/>-->
+        <input type='hidden' name='notify_url' th:value='${notifyUrl}'/>
         <input type='hidden' name='out_trade_no' th:value="${outTradeNo}"/>
         <input type='hidden' name='pid' value='11591'/>
-        <input type='hidden' name='return_url' value='http://pay.zzyun.com/return_url.php'/>
+<!--        <input type='hidden' name='return_url' value='http://pay.zzyun.com/return_url.php'/>-->
+        <input type='hidden' name='return_url' th:value='${returnUrl}'/>
         <input type='hidden' name='type' value='alipay'/>
         <input type='hidden' name='sign_type' value='MD5'/>
         <input type='hidden' name='sign' th:value="${sign}"/>

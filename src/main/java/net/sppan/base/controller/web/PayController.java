@@ -52,6 +52,8 @@ public class PayController extends BaseController{
 		model.addAttribute("supplier", resp.getName());
 		model.addAttribute("sign", resp.getSign());
 		model.addAttribute("outTradeNo", resp.getOutTradeNo());
+		model.addAttribute("notifyUrl", resp.getNotifyUrl());
+		model.addAttribute("returnUrl", resp.getReturnUrl());
 		return "/yyjc/pay";
 	}
 
@@ -62,7 +64,20 @@ public class PayController extends BaseController{
 		String type = "alipay";//支付类型
 		String outTradeNo = DateUtil.format(DateUtil.date(), DatePattern.PURE_DATETIME_PATTERN) + RandomUtil.randomNumbers(5);//商户单号
 		String notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
-		String returnUrl = "http://pay.zzyun.com/return_url.php";//跳转地址
+//		if("临时用户".equals(dto.getSupplier())){
+////			notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
+//			notifyUrl = "http://asiamales.com/5";//跳转地址
+//		}else {
+//			notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
+//		}
+		String returnUrl = "";
+		if("临时用户".equals(dto.getSupplier())){
+//			notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
+			returnUrl = "http://asiamales.com/5";//跳转地址
+		}else {
+			returnUrl = "http://pay.zzyun.com/return_url.php";//异步通知
+		}
+
 		String name = dto.getSupplier();//商品名
 		String money = dto.getPrice();//价格:"1.00"
 		String signType = "MD5";//签名类型
@@ -108,6 +123,8 @@ public class PayController extends BaseController{
 		resp.setMoney(dto.getPrice());
 		resp.setName(name);
 		resp.setSign(signStr);
+		resp.setNotifyUrl(notifyUrl);
+		resp.setReturnUrl(returnUrl);
 
 		return resp;
 	}
