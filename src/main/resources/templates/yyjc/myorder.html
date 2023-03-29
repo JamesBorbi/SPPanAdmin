@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--    <meta charset="UTF-8">-->
+    <title>漂亮大气的网页</title>
+    <style>
+      /* 全局样式 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* 头部样式 */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+      /* 返回键样式 */
+      .back-button {
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      /* 中间模块样式 */
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+      }
+
+      .module {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: calc(100% / 3 - 40px); /* 计算每个模块的宽度 */
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .module:hover {
+        transform: translateY(-5px);
+      }
+
+      /* 文本样式 */
+      .text {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 16px;
+        color: #777;
+        line-height: 1.5;
+      }
+    </style>
+</head>
+<body>
+<!-- 头部 -->
+<div class="header">
+    <a href="./yyjc/index.html" ><div class="back-button">&lt;</div></a>
+    <div>漂亮大气的网页</div>
+    <div></div>
+</div>
+
+<!-- 中间模块 -->
+<div class="container">
+    <div class="module">
+        <div class="text">模块1</div>
+        <div class="description">这是一个描述文字，用于描述模块1的内容。</div>
+    </div>
+    <div class="module">
+        <div class="text">模块2</div>
+        <div class="description">这是一个描述文字，用于描述模块2的内容。</div>
+    </div>
+    <div class="module">
+        <div class="text">模块3</div>
+        <div class="description">这是一个描述文字，用于描述模块3的内容。</div>
+    </div>
+</div>
+</body>
+</html>
