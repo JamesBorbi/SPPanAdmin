@@ -54,7 +54,7 @@ public class PayController extends BaseController{
 		model.addAttribute("outTradeNo", resp.getOutTradeNo());
 		model.addAttribute("notifyUrl", resp.getNotifyUrl());
 		model.addAttribute("returnUrl", resp.getReturnUrl());
-		return "/yyjc/pay";
+		return "yyjc/pay";
 	}
 
 
