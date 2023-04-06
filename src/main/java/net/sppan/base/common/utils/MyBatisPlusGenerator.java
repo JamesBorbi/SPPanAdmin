@@ -47,14 +47,16 @@ public class MyBatisPlusGenerator {
         String[] tableNames = scanner("表名,多个以逗号隔开").split(",");
         String projectPath = System.getProperty("user.dir");
 
-        String jdbcUrl = "jdbc:mysql://ops-dbproxy-dev05.shein.com:4002/pims_dev?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&connectTimeout=1800000";
-        String userName = "lt_pims_dev_rw";
-        String passWord = "8thEj9WYtMUpiAu5cb";
+//        String jdbcUrl = "jdbc:mysql://ops-dbproxy-dev05.shein.com:4002/pims_dev?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&connectTimeout=1800000";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/base?characterEncoding=utf8";
+        String userName = "root";
+        String passWord = "Musk_7758258";
 
         FastAutoGenerator.create(jdbcUrl,userName,passWord)
-                .globalConfig(builder -> builder.author("Shein")
-                        .outputDir(projectPath+"/pims-service/src/main/java")
-                        .enableSwagger()
+                .globalConfig(builder -> builder.author("musk")
+//                        .outputDir(projectPath+"/pims-service/src/main/java")
+                        .outputDir(projectPath+"/src/main/java")
+//                        .enableSwagger()
                         .disableOpenDir()
                         .dateType(DateType.ONLY_DATE))
                 .packageConfig(builder -> builder.moduleName(moduleName)
@@ -62,10 +64,12 @@ public class MyBatisPlusGenerator {
                         .mapper("dao")
                         .controller("api")
                         //设置父包名
-                        .parent("com.shein.pims")
+//                        .parent("com.shein.pims")
+                        .parent("net.sppan.base")
                         //设置mapperXml生成路径
                         .pathInfo(Collections.singletonMap(OutputFile.mapperXml,
-                                projectPath + "/pims-service/src/main/resources/com/shein/sqlscript/" + moduleName)))
+//                                projectPath + "/pims-service/src/main/resources/com/shein/sqlscript/" + moduleName)))
+                                projectPath + "/src/main/resources/com/" + moduleName)))
                 .strategyConfig(builder -> builder.addInclude(tableNames)
                         .addTablePrefix(moduleName+"_")
                         .mapperBuilder()
