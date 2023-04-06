@@ -72,10 +72,13 @@ public class PayController extends BaseController{
 //		}
 		String returnUrl = "";
 		if("临时用户".equals(dto.getSupplier())){
-//			notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
+//			notifyUrl = "http://pay.zzyun.com/notify_url.php";//跳转地址
 			returnUrl = "http://asiamales.com/5";//跳转地址
-		}else {
-			returnUrl = "http://pay.zzyun.com/return_url.php";//异步通知
+		}else if(dto.getSupplier().contains("asiamales终身会员")){
+			String userId = dto.getSupplier().split("_")[1];
+			returnUrl = "http://asiamales.com/api/user/addMember?jpressAppId=asiamales&ct=2029&sign=api_user_addMember&userId="+userId+"&groupId=2";//跳转地址
+		} else {
+			returnUrl = "http://pay.zzyun.com/return_url.php";//跳转地址
 		}
 
 		String name = dto.getSupplier();//商品名
