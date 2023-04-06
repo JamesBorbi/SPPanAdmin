@@ -1,0 +1,61 @@
+package net.sppan.base.back.entity.po;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import net.sppan.base.common.utils.BasePO;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ * 吃码盈亏表
+ * </p>
+ *
+ * @author musk
+ * @since 2023-04-04
+ */
+@Getter
+@Setter
+@Accessors(chain = true)
+@TableName("tb_eat_loss")
+public class TbEatLossPO extends BasePO {
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * 主键id
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
+
+    /**
+     * 期数
+     */
+    @TableField("time_num")
+    private Integer timeNum;
+
+    /**
+     * 投额
+     */
+    @TableField("use_amount")
+    private BigDecimal useAmount;
+
+    /**
+     * 中奖:0否 1是
+     */
+    @TableField("is_prize")
+    private Boolean isPrize;
+
+    /**
+     * 盈亏:0否 1是
+     */
+    @TableField("loss_num")
+    private Integer lossNum;
+
+
+}
