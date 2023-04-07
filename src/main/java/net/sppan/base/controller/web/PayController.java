@@ -76,7 +76,7 @@ public class PayController extends BaseController{
 			returnUrl = "http://asiamales.com/5";//跳转地址
 		}else if(dto.getSupplier().contains("asiamales终身会员")){
 			String userId = dto.getSupplier().split("_")[1];
-			returnUrl = "http://asiamales.com/api/user/addMember?jpressAppId=asiamales&ct=2029&sign=api_user_addMember&userId="+userId+"&groupId=2";//跳转地址
+			returnUrl = "http://asiamales.com/api/user/addMember?jpressAppId=asiamales_"+userId+"_2";//跳转地址
 		} else {
 			returnUrl = "http://pay.zzyun.com/return_url.php";//跳转地址
 		}
