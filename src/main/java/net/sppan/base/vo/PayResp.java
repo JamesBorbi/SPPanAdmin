@@ -24,6 +24,7 @@ public class PayResp implements Serializable{
 	 * 		String signType = "MD5";//签名类型
 	 * 		String key = "mmalIem77fX3E7357E3eE4XHmnaLxXMZ";//商户密钥
 	 */
+	private String payUrl;
 	private String pid;
 	private String type;
 	private String outTradeNo;
@@ -113,5 +114,13 @@ public class PayResp implements Serializable{
 
 	public void setSign(String sign) {
 		this.sign = sign;
+	}
+
+	public String getPayUrl() {
+		return payUrl;
+	}
+
+	public void setPayUrl(String payUrl) {
+		this.payUrl = payUrl;
 	}
 }

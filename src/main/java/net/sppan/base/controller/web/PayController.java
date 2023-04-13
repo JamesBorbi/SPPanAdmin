@@ -54,16 +54,18 @@ public class PayController extends BaseController{
 		model.addAttribute("outTradeNo", resp.getOutTradeNo());
 		model.addAttribute("notifyUrl", resp.getNotifyUrl());
 		model.addAttribute("returnUrl", resp.getReturnUrl());
+		model.addAttribute("payUrl", resp.getPayUrl());
 		return "yyjc/pay";
 	}
 
 
 	public PayResp getSign(PayDto dto){
-		String url = "https://pay.zzyun.com/submit.php";//支付地址
-		String pid = "11591";//商户id
+//		String url = "https://pay.zzyun.com/submit.php";//支付地址
+		String payUrl = "https://pay.ezfs.cn/submit.php";//支付地址
+		String pid = "1088";//商户id
 		String type = "alipay";//支付类型
 		String outTradeNo = DateUtil.format(DateUtil.date(), DatePattern.PURE_DATETIME_PATTERN) + RandomUtil.randomNumbers(5);//商户单号
-		String notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
+		String notifyUrl = "http://www.pay.com/notify_url.php";//异步通知
 //		if("临时用户".equals(dto.getSupplier())){
 ////			notifyUrl = "http://pay.zzyun.com/notify_url.php";//异步通知
 //			notifyUrl = "http://asiamales.com/5";//跳转地址
@@ -78,13 +80,13 @@ public class PayController extends BaseController{
 			String userId = dto.getSupplier().split("_")[1];
 			returnUrl = "http://asiamales.com/api/user/addMember?jpressAppId=asiamales_"+userId+"_2";//跳转地址
 		} else {
-			returnUrl = "http://pay.zzyun.com/return_url.php";//跳转地址
+			returnUrl = "http://www.pay.com/return_url.php";//跳转地址
 		}
 
 		String name = dto.getSupplier();//商品名
 		String money = dto.getPrice();//价格:"1.00"
 		String signType = "MD5";//签名类型
-		String key = "mmalIem77fX3E7357E3eE4XHmnaLxXMZ";//商户密钥
+		String key = "J20qZSfd3ryKsYW2wWM10qKj8kK5wysN";//商户密钥
 
 
 
@@ -128,6 +130,7 @@ public class PayController extends BaseController{
 		resp.setSign(signStr);
 		resp.setNotifyUrl(notifyUrl);
 		resp.setReturnUrl(returnUrl);
+		resp.setPayUrl(payUrl);
 
 		return resp;
 	}

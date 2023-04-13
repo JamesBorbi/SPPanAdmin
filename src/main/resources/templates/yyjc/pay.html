@@ -15,7 +15,7 @@ $("#submitBtn").click(function() {
 
 <body>
 
-    <form id='paying' action='https://pay.zzyun.com/submit.php/submit.php' method='post'>
+    <form id='paying' th:action='${payUrl}' method='post'>
         <input type='hidden' name='money' th:value="${price}"/>
         <input type='hidden' name='name' th:value="${supplier}"/>
 <!--        <input type='hidden' name='notify_url' value='http://pay.zzyun.com/notify_url.php'/>-->
