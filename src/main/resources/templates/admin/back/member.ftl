@@ -25,8 +25,8 @@
 
     <!-- Google Font -->
 
-    <link type="text/css" rel="stylesheet" href="./首页_files/jquery-jvectormap.css">
-    <link type="text/css" rel="stylesheet" href="./首页_files/all.css">
+    <link type="text/css" rel="stylesheet" href="${ctx!}/files/jquery-jvectormap.css">
+    <link type="text/css" rel="stylesheet" href="${ctx!}/files/all.css">
 
 
     <style>
@@ -164,15 +164,17 @@ zz3375                </p>
   <!-- /.modal -->
   <script>
     $(document).on('click','.changepwd', function(){
-      $.post('/sys/changePassword',{oldPwd:$('#oldPwd').val(),newPwd:$('#newPwd').val()},function(ret){
-        if(ret.succeed){
-          $('#modal-changepwd').modal('hide');
-          window.location.href = '/logout';
-        }else{
-          alert(ret.message);
-        }
-      },'json');
-    });
+  $.post('${ctx!}/admin/user/updatePwd',{oldPassword:$('#oldPwd').val(),password1:$('#newPwd').val(),password2:$('#newPwd').val()},function(ret){
+    if(ret.code == 0){
+      alert(ret.message);
+      $('#modal-changepwd').modal('hide');
+      window.location.href = '${ctx!}/admin/logout';
+    }else{
+      alert(ret.message);
+    }
+  },'json');
+});
+
 
     $(function() {
       getExpireTime();
@@ -311,10 +313,12 @@ zz3375                </p>
             <div class="box-header">
               <h3 class="box-title">
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-User" onclick="userAction(&#39;&#39;,&#39;add&#39;)">
-                    <i class="fa fa-fw fa-user-plus"></i>
+<#--                    <i class="fa fa-fw fa-user-plus"></i>-->
+                    新增
                 </button>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-clear">
-                    <i class="fa fa-fw fa-trash"></i>
+<#--                    <i class="fa fa-fw fa-trash"></i>-->
+                    清理
                 </button>
                 <button type="button" class="btn btn-danger" onclick="userAction(&#39;&#39;, &#39;unbindAll&#39;)">
                 	抹除标识
@@ -351,13 +355,16 @@ zz3375                </p>
                 
                 <tbody><tr role="row" class="odd"><td class="sorting_1"></td><td>亲切质感</td><td>0</td><td>0</td><td>0</td><td>√</td><td>×</td><td>×</td><td>×</td></tr><tr role="row" class="even"><td colspan="9" class="sorting_1">
     <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#modal-User" onclick="userAction(&#39;1630207615634010113&#39;,&#39;edit&#39;)">
-      <i class="fa fa-edit"></i>
-</button>
-<button type="button" class="btn-copy btn-sm btn-primary" aria-label="1630207615634010113" onclick="userAction(&#39;1630207615634010113&#39;,&#39;copy&#39;)">
-<i class="fa fa-copy"></i>
-</button>
+<#--      <i class="fa fa-edit"></i>-->
+      编辑
+    </button>
+    <button type="button" class="btn-copy btn-sm btn-primary" aria-label="1630207615634010113" onclick="userAction(&#39;1630207615634010113&#39;,&#39;copy&#39;)">
+<#--    <i class="fa fa-copy"></i>-->
+      复制
+    </button>
     <button type="button" class="btn-sm btn-primary" onclick="userAction(&#39;1630207615634010113&#39;,&#39;unbind&#39;)">
-      <i class="fa fa-unlink"></i>
+<#--      <i class="fa fa-unlink"></i>-->
+      链接
     </button>
     <button type="button" class="btn-sm btn-primary" onclick="userAction(&#39;1630207615634010113&#39;,&#39;plus&#39;)">
       上
@@ -379,6 +386,7 @@ zz3375                </p>
     </button>
     <button type="button" class="btn-sm btn-danger" onclick="userAction(&#39;1630207615634010113&#39;,&#39;delete&#39;)">
       <i class="fa fa-trash"></i>
+      删
     </button>
   </td><td style="display: none;">亲切质感</td><td style="display: none;">0</td><td style="display: none;">0</td><td style="display: none;">0</td><td style="display: none;">√</td><td style="display: none;">×</td><td style="display: none;">×</td><td style="display: none;">×</td></tr><tr role="row" class="odd"><td class="sorting_1"></td><td>拥抱有限</td><td>0</td><td>0</td><td>0</td><td>√</td><td>×</td><td>×</td><td>×</td></tr><tr role="row" class="even"><td colspan="9" class="sorting_1">
     <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#modal-User" onclick="userAction(&#39;1630207615650787329&#39;,&#39;edit&#39;)">
@@ -1264,8 +1272,8 @@ function userAction(id,action,extra)
     $('#isPrivate').val("");
     $('#onlyWeb').val("");
     $('#imageUrl').hide();
-    
-    $('#modalForm').attr('action', '/sys/member');
+
+    // $('#modalForm').attr('action', '/sys/member');
   }
   else if(action == 'edit')
   {
@@ -1335,6 +1343,27 @@ function userAction(id,action,extra)
   	});
   }
 }
+
+  $(document).on('click','#modalSubmit', function(){
+      $.post('${ctx!}/sys/member',
+          {
+              nickName:$('#nickName').val(),
+              imgUrl:$('#imgUrl').val(),
+              isTuo:$('#isTuo').val(),
+              searchable:$('#searchable').val(),
+              isPrivate:$('#isPrivate').val(),
+              onlyWeb:$('#onlyWeb').val()
+          },
+          function(ret){
+              if(ret.code == 0){
+                  alert(ret.message);
+                  // $('#modal-User').modal('hide');
+                  <#--window.location.href = '${ctx!}/admin/back/member';-->
+              }else{
+                  alert(ret.message);
+              }
+          },'json');
+  });
 </script>
 		
   <!-- Control Sidebar -->

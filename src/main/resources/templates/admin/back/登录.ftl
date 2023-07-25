@@ -25,8 +25,8 @@
 
   <!-- Google Font -->
 
-  <link type="text/css" rel="stylesheet" href="./首页_files/jquery-jvectormap.css">
-  <link type="text/css" rel="stylesheet" href="./首页_files/all.css">
+  <link type="text/css" rel="stylesheet" href="${ctx!}/files/jquery-jvectormap.css">
+  <link type="text/css" rel="stylesheet" href="${ctx!}/files/all.css">
 
 
   <style>

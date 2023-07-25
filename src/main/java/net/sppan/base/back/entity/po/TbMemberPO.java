@@ -67,25 +67,25 @@ public class TbMemberPO extends BasePO {
      * 自动托:0否 1是
      */
     @TableField("is_tora")
-    private Boolean isTora;
+    private Integer isTora;
 
     /**
      * 吃:0否 1是
      */
     @TableField("is_eat")
-    private Boolean isEat;
+    private Integer isEat;
 
     /**
      * 可查流水:0否 1是
      */
     @TableField("is_check")
-    private Boolean isCheck;
+    private Integer isCheck;
 
     /**
      * 绑定:0否 1是
      */
     @TableField("is_binding")
-    private Boolean isBinding;
+    private Integer isBinding;
 
     /**
      * 头像
@@ -97,13 +97,13 @@ public class TbMemberPO extends BasePO {
      * 是否私聊:0否 1是
      */
     @TableField("is_talk")
-    private Boolean isTalk;
+    private Integer isTalk;
 
     /**
      * 只进网页群:0否 1是
      */
     @TableField("is_in_web")
-    private Boolean isInWeb;
+    private Integer isInWeb;
 
 
 }

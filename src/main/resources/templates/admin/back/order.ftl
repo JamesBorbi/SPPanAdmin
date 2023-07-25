@@ -30,8 +30,8 @@
 
   <!-- Google Font -->
 
-  <link type="text/css" rel="stylesheet" href="./首页_files/jquery-jvectormap.css">
-  <link type="text/css" rel="stylesheet" href="./首页_files/all.css">
+  <link type="text/css" rel="stylesheet" href="${ctx!}/files/jquery-jvectormap.css">
+  <link type="text/css" rel="stylesheet" href="${ctx!}/files/all.css">
 
 
   <style>
@@ -169,15 +169,17 @@ zz3375                </p>
   <!-- /.modal -->
   <script>
     $(document).on('click','.changepwd', function(){
-      $.post('/sys/changePassword',{oldPwd:$('#oldPwd').val(),newPwd:$('#newPwd').val()},function(ret){
-        if(ret.succeed){
-          $('#modal-changepwd').modal('hide');
-          window.location.href = '/logout';
-        }else{
-          alert(ret.message);
-        }
-      },'json');
-    });
+  $.post('${ctx!}/admin/user/updatePwd',{oldPassword:$('#oldPwd').val(),password1:$('#newPwd').val(),password2:$('#newPwd').val()},function(ret){
+    if(ret.code == 0){
+      alert(ret.message);
+      $('#modal-changepwd').modal('hide');
+      window.location.href = '${ctx!}/admin/logout';
+    }else{
+      alert(ret.message);
+    }
+  },'json');
+});
+
 
     $(function() {
       getExpireTime();

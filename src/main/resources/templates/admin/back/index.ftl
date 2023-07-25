@@ -167,11 +167,6 @@ zz3375                </p>
   <script>
     $(document).on('click','.changepwd', function(){
       $.post('${ctx!}/admin/user/updatePwd',{oldPassword:$('#oldPwd').val(),password1:$('#newPwd').val(),password2:$('#newPwd').val()},function(ret){
-
-        const key = 'your_secret_key';
-
-        const encryptedData = crypto.md5()
-        alert(encryptedData);
         if(ret.code == 0){
           alert(ret.message);
           $('#modal-changepwd').modal('hide');
