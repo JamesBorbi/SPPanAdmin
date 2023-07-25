@@ -4281,7 +4281,7 @@ CodeMaker.prototype.newGenerate = function () {
             $(".betStatus span").text(s.numberList.length),
             localStorage.setItem('lastMoney', i),
             window.parent.postMessage("selectionInput", "*")
-            //location.href = `./index.html?toast=1`
+            //location.href = `${ctx!}/files.html?toast=1`
             )
             var postData = transSelectAll(this.options, this, G, this.codeMaker);
             console.log(postData)
@@ -5601,7 +5601,7 @@ function getAllNumbersByText(text,i,G,n){
             console.log(errorMsg);
             // ZENG.msgbox.show("网络错误！", 1, 1500);
             // $.confirm("当前快选已超时！", function () {
-            //     location.href = "./index.html?toast=1"
+            //     location.href = "${ctx!}/files.html?toast=1"
             // })
         }
     })
@@ -5650,7 +5650,7 @@ function getAllCreateNumbers(postData, i, G, n) {
             console.log(errorMsg);
             // ZENG.msgbox.show("网络错误！", 1, 1500);
             // $.confirm("当前快选已超时！", function () {
-            //     location.href = "./index.html?toast=1"
+            //     location.href = "${ctx!}/files.html?toast=1"
             // })
         }
     })

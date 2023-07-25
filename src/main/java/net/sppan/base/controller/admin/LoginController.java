@@ -41,7 +41,7 @@ public class LoginController extends BaseController {
 			//登陆成功后跳转
 			User user = userService.findByUserName(username);
 			if(!ObjectUtils.nullSafeEquals(1,user.getId())){
-				return redirect("/back/index");
+				return redirect("/admin/back");
 			}else {
 				return redirect("/admin/index");
 			}

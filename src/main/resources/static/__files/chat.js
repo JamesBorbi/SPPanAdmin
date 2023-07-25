@@ -675,7 +675,11 @@ $(document).ready(function () {
         }
         var murmur = Fingerprint2.x64hash128(values.join(''), 31)
         $.post('/bind', {uid: userId, fingerprint: murmur}, function (ret) {
+        alert("2");
+
             if (ret.succeed) {
+
+            alert("1");
 //                createWebSocket("ws://" + location.hostname + ":"+port+"/ws?uid="+userId+"&fp=" + murmur);
             }
         }, 'json');
