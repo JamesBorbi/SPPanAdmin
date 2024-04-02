@@ -42,6 +42,10 @@ public class TbXVO {
      * 媒体地址
      */
     private String mediaUrl;
+    /**
+     * 媒体类型：1图片，2视频
+     */
+    private Integer mediaType;
 
 
 }

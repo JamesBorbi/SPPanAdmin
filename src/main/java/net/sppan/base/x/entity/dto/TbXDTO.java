@@ -1,5 +1,6 @@
 package net.sppan.base.x.entity.dto;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
@@ -46,6 +47,11 @@ public class TbXDTO {
      * 媒体地址
      */
     private String mediaUrl;
+
+    /**
+     * 媒体类型：1图片，2视频
+     */
+    private Integer mediaType;
 
 
 }

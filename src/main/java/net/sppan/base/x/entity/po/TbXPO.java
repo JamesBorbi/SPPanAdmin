@@ -49,6 +49,11 @@ public class TbXPO extends BasePO {
      */
     @TableField("media_url")
     private String mediaUrl;
+    /**
+     * 媒体类型：1图片，2视频
+     */
+    @TableField("media_type")
+    private Integer mediaType;
 
 
 }

@@ -20,5 +20,6 @@ CREATE TABLE `tb_x` (
        `title` varchar(50) NOT NULL DEFAULT '' COMMENT '标题',
        `comment` varchar(1000) NOT NULL DEFAULT '' COMMENT '内容',
        `media_url` varchar(2000) NOT NULL DEFAULT '' COMMENT '媒体地址',
+       `media_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '媒体类型：1图片，2视频',
        PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='x列表';
