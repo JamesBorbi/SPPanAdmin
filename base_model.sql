@@ -17,7 +17,7 @@ CREATE TABLE `tb_x` (
        `update_by` varchar(50) NOT NULL DEFAULT '' COMMENT '更新人',
        `last_update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后更新时间',
        `is_delete` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除：0否 1是',
-       `tittle` varchar(50) NOT NULL DEFAULT '' COMMENT '标题',
+       `title` varchar(50) NOT NULL DEFAULT '' COMMENT '标题',
        `comment` varchar(1000) NOT NULL DEFAULT '' COMMENT '内容',
        `media_url` varchar(2000) NOT NULL DEFAULT '' COMMENT '媒体地址',
        PRIMARY KEY (`id`)

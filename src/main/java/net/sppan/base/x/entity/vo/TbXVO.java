@@ -31,7 +31,7 @@ public class TbXVO {
     /**
      * 标题
      */
-    private String tittle;
+    private String title;
 
     /**
      * 内容

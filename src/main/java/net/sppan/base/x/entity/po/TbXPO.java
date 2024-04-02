@@ -35,8 +35,8 @@ public class TbXPO extends BasePO {
     /**
      * 标题
      */
-    @TableField("tittle")
-    private String tittle;
+    @TableField("title")
+    private String title;
 
     /**
      * 内容

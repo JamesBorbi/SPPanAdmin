@@ -39,8 +39,8 @@ public class TbXServiceImpl extends ServiceImpl<TbXDao, TbXPO> implements TbXSer
         if(StrUtil.isNotBlank(xdto.getComment())){
             queryWrapper.like(TbXPO::getComment,xdto.getComment());
         }
-        if(StrUtil.isNotBlank(xdto.getTittle())){
-            queryWrapper.eq(TbXPO::getTittle,xdto.getTittle());
+        if(StrUtil.isNotBlank(xdto.getTitle())){
+            queryWrapper.eq(TbXPO::getTitle,xdto.getTitle());
         }
         Page<TbXPO> pageList = tbXDao.selectPage(page,queryWrapper);
 
