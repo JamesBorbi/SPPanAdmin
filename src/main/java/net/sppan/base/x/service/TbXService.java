@@ -1,7 +1,10 @@
 package net.sppan.base.x.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import net.sppan.base.x.entity.dto.TbXDTO;
 import net.sppan.base.x.entity.po.TbXPO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import net.sppan.base.x.entity.vo.TbXVO;
 
 /**
  * <p>
@@ -13,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TbXService extends IService<TbXPO> {
 
+
+    Page<TbXVO> selectPage(TbXDTO xdto);
 }
