@@ -48,11 +48,13 @@
         }
 
         .post {
-            margin-bottom: 20px;
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 4px;
-            border: 1px solid #eaeaea;
+            /*margin-bottom: 20px;*/
+            /*background-color: #f9f9f9;*/
+            /*padding: 15px;*/
+            /*border-radius: 4px;*/
+            /*border-top: 1px solid #eaeaea;*/
+            width: 100%;
+            border-bottom: 1px solid #eaeaea;
             position: relative;
         }
 
@@ -100,6 +102,10 @@
 
             .post {
                 padding: 10px;
+            }
+            .video {
+                /* 在小屏幕上的视频样式，例如可以设置一个固定的最大宽度 */
+                max-width: 100%;
             }
         }
 
@@ -151,7 +157,15 @@
             z-index: 2;
         }
         .video {
-            border-radius: 10px;
+            width: 100%; /* 视频宽度设置为100%，填满容器 */
+            height: auto; /* 高度自动，保持视频的宽高比 */
+            border-radius: 10px; /* 视频边框圆角 */
+        }
+        .no-more-posts {
+            display: flex; /* 使用Flexbox布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            height: 100%; /* 容器高度占满可用空间 */
         }
     </style>
 </head>
@@ -169,11 +183,13 @@
 <!-- 用于存放新加载的帖子 -->
 <div class="container" id="posts-container"></div>
 
-<!-- Lightbox -->
-<script src="${ctx!}/assets/js/lightbox.js"></script>
 <!-- 全局js -->
 <script src="${ctx!}/assets/js/jquery.min.js?v=2.1.4"></script>
 <script src="${ctx!}/assets/js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- Lightbox -->
+<script src="${ctx!}/assets/js/lightbox.js"></script>
+
 <script>
     // 初始化变量
     var pageIndex = 1;
@@ -260,11 +276,12 @@
                 // 没有更多帖子时，显示提示信息
                 // $('#posts-container').append('<p>No more posts to load.</p>');
             }
-            isLoading = false;
             // 完成加载后重置标志
+            isLoading = false;
         }).fail(function () {
             console.log('Error loading posts');
-            isLoading = false; // 如果请求失败，重置加载标志
+            // 如果请求失败，重置加载标志
+            isLoading = false;
         });
     }
 </script>
