@@ -10,6 +10,8 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 import net.sppan.base.common.BasePO;
 
+import java.util.Date;
+
 /**
  * <p>
  * x列表
@@ -29,23 +31,89 @@ public class TbXVO {
     private Long id;
 
     /**
-     * 标题
+     * 创建时间
      */
-    private String title;
+    private Date createTime;
 
     /**
-     * 内容
+     * 创建人
      */
-    private String comment;
+    private String createBy;
 
     /**
-     * 媒体地址
+     * 更新时间
+     */
+    private Date updateTime;
+
+    /**
+     * 更新人
+     */
+    private String updateBy;
+
+    /**
+     * 最后更新时间
+     */
+    private Date lastUpdateTime;
+
+    /**
+     * 是否删除：0否 1是
+     */
+    private Integer isDelete;
+
+    /**
+     * 推文日期
+     */
+    private Date tweetDate;
+
+    /**
+     * 显示名称
+     */
+    private String displayName;
+
+    /**
+     * 用户名称
+     */
+    private String userName;
+
+    /**
+     * 推文链接
+     */
+    private String tweetUrl;
+
+    /**
+     * 媒体类型
+     */
+    private String mediaType;
+
+    /**
+     * 媒体链接
      */
     private String mediaUrl;
+
     /**
-     * 媒体类型：1图片，2视频
+     * 保存的文件名
      */
-    private Integer mediaType;
+    private String savedFilename;
+
+    /**
+     * 推文内容
+     */
+    private String tweetContent;
+
+    /**
+     * 收藏数
+     */
+    private Integer favoriteCount;
+
+    /**
+     * 转发数
+     */
+    private Integer retweetCount;
+
+    /**
+     * 回复数
+     */
+    private Integer replyCount;
 
 
 }

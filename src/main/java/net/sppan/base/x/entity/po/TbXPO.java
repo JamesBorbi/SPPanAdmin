@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.Date;
+
 import net.sppan.base.common.BasePO;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,27 +35,70 @@ public class TbXPO extends BasePO {
     private Long id;
 
     /**
-     * 标题
+     * 推文日期
      */
-    @TableField("title")
-    private String title;
+    @TableField("tweet_date")
+    private Date tweetDate;
 
     /**
-     * 内容
+     * 显示名称
      */
-    @TableField("comment")
-    private String comment;
+    @TableField("display_name")
+    private String displayName;
 
     /**
-     * 媒体地址
+     * 用户名称
+     */
+    @TableField("user_name")
+    private String userName;
+
+    /**
+     * 推文链接
+     */
+    @TableField("tweet_url")
+    private String tweetUrl;
+
+    /**
+     * 媒体类型
+     */
+    @TableField("media_type")
+    private String mediaType;
+
+    /**
+     * 媒体链接
      */
     @TableField("media_url")
     private String mediaUrl;
+
     /**
-     * 媒体类型：1图片，2视频
+     * 保存的文件名
      */
-    @TableField("media_type")
-    private Integer mediaType;
+    @TableField("saved_filename")
+    private String savedFilename;
+
+    /**
+     * 推文内容
+     */
+    @TableField("tweet_content")
+    private String tweetContent;
+
+    /**
+     * 收藏数
+     */
+    @TableField("favorite_count")
+    private Integer favoriteCount;
+
+    /**
+     * 转发数
+     */
+    @TableField("retweet_count")
+    private Integer retweetCount;
+
+    /**
+     * 回复数
+     */
+    @TableField("reply_count")
+    private Integer replyCount;
 
 
 }
