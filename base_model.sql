@@ -25,6 +25,7 @@ CREATE TABLE `tb_x` (
         `tweet_url` varchar(255) NOT NULL COMMENT '推文链接',
         `media_type` varchar(50) NOT NULL COMMENT '媒体类型',
         `media_url` varchar(255) DEFAULT NULL COMMENT '媒体链接',
+        `local_media_url` varchar(255) DEFAULT NULL COMMENT '本地媒体链接',
         `saved_filename` varchar(255) DEFAULT NULL COMMENT '保存的文件名',
         `tweet_content` varchar(5000) DEFAULT NULL COMMENT '推文内容',
         `favorite_count` int NOT NULL DEFAULT '0' COMMENT '收藏数',
@@ -32,5 +33,9 @@ CREATE TABLE `tb_x` (
         `reply_count` int NOT NULL DEFAULT '0' COMMENT '回复数',
 
 
-        PRIMARY KEY (`id`)
+        PRIMARY KEY (`id`),
+        KEY `idx_tb_x` (`last_update_time`) USING BTREE,
+        KEY `idx_tweet_content` (`tweet_content`) USING BTREE,
+        KEY `idx_display_name` (`display_name`) USING BTREE,
+        KEY `idx_user_name` (`user_name`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='x列表';

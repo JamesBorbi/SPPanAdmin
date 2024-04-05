@@ -8,6 +8,7 @@ import cn.hutool.core.text.UnicodeUtil;
 import cn.hutool.core.text.csv.CsvData;
 import cn.hutool.core.text.csv.CsvRow;
 import cn.hutool.core.text.csv.CsvUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import net.sppan.base.x.dao.TbXDao;
 import net.sppan.base.x.entity.po.TbXPO;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -41,6 +42,8 @@ public class TweetImportTask {
 
     @Value("${media.path}")
     private String mediaPath;
+    @Value("${media.path.xd}")
+    private String mediaPathXd;
     /**
      * 每天凌晨1点执行
      */
@@ -106,13 +109,25 @@ public class TweetImportTask {
                     CsvData csvData = CsvUtil.getReader().read(file);
 
                     Integer i = 0;
+                    String address = "";
                     for (CsvRow row : csvData.getRows()) {
+                        List<String> list = row.getRawList();
+
+                        if(i==0){
+                            address = mediaPathXd +"/"+StringEscapeUtils.escapeJava(list.get(1))+"/";
+                        }
                         i++;
                         //忽略前四行
                         if(i<5){
                             continue;
                         }
-                        List<String> list = row.getRawList();
+                        //校验重复
+                        List<TbXPO> tbXPOList = tbXDao.selectList(new LambdaQueryWrapper<TbXPO>()
+                                .eq(TbXPO::getSavedFilename,list.get(6)));
+                        if(CollUtil.isNotEmpty(tbXPOList)){
+                            continue;
+                        }
+
                         // 创建Tweet对象并设置属性
                         TbXPO tweet = new TbXPO();
                         tweet.setTweetDate(DateUtil.parse(list.get(0), "yyyy-MM-dd HH:mm"));
@@ -126,6 +141,7 @@ public class TweetImportTask {
                         tweet.setFavoriteCount(Integer.parseInt(list.get(8)));
                         tweet.setRetweetCount(Integer.parseInt(list.get(9)));
                         tweet.setReplyCount(Integer.parseInt(list.get(10)));
+                        tweet.setLocalMediaUrl(address + list.get(6));
 
                         tweet.setCreateBy("root");
                         tweet.setCreateTime(date);

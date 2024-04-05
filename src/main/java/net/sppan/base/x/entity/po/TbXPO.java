@@ -69,6 +69,11 @@ public class TbXPO extends BasePO {
      */
     @TableField("media_url")
     private String mediaUrl;
+    /**
+     * 本地媒体链接
+     */
+    @TableField("local_media_url")
+    private String localMediaUrl;
 
     /**
      * 保存的文件名

@@ -2,6 +2,8 @@ package net.sppan.base.x.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -11,6 +13,8 @@ import net.sppan.base.x.dao.TbXDao;
 import net.sppan.base.x.entity.vo.TbXVO;
 import net.sppan.base.x.service.TbXService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -31,6 +35,7 @@ public class TbXServiceImpl extends ServiceImpl<TbXDao, TbXPO> implements TbXSer
     @Resource
     private TbXDao tbXDao;
 
+
     @Override
     public Page<TbXVO> selectPage(TbXDTO xdto) {
 
@@ -50,6 +55,9 @@ public class TbXServiceImpl extends ServiceImpl<TbXDao, TbXPO> implements TbXSer
         for (TbXPO record : pageList.getRecords()) {
             TbXVO tbXVO = new TbXVO();
             BeanUtil.copyProperties(record,tbXVO);
+            tbXVO.setTweetContent(StringEscapeUtils.unescapeJava(tbXVO.getTweetContent()));
+            tbXVO.setDisplayName(StringEscapeUtils.unescapeJava(tbXVO.getDisplayName()));
+            tbXVO.setTweetDate(DateUtil.format(record.getTweetDate(), "dd/MM/yyyy"));
             tbXVOList.add(tbXVO);
         }
 

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -63,7 +64,7 @@ public class TbXVO {
     /**
      * 推文日期
      */
-    private Date tweetDate;
+    private String tweetDate;
 
     /**
      * 显示名称
@@ -89,6 +90,10 @@ public class TbXVO {
      * 媒体链接
      */
     private String mediaUrl;
+    /**
+     * 本地媒体链接
+     */
+    private String localMediaUrl;
 
     /**
      * 保存的文件名

@@ -167,6 +167,18 @@
             align-items: center; /* 垂直居中 */
             height: 100%; /* 容器高度占满可用空间 */
         }
+        /* 设置 post.userName 和 post.tweetDate 的样式 */
+        .post .meta {
+            font-size: 14px; /* 设置为小五号字体大小 */
+            color: #888; /* 设置字体颜色为灰色 */
+            font-weight: normal; /* 可选：设置字体为正常粗细 */
+        }
+
+        /* 头部图标样式，假设图标元素的类名为 "header-icon" */
+        .header-icon {
+            text-transform: uppercase; /* 将文本转换为大写 */
+            font-size: 20px; /* 可选：设置图标大小 */
+        }
     </style>
 </head>
 
@@ -234,30 +246,40 @@
                 // 将新加载的帖子添加到页面中
                 var $postsContainer = $('#posts-container');
                 $.each(response.records, function (index, post) {
-                    var newPost = $('<div>').addClass('post');
-                    newPost.append($('<div>').addClass('title').text('@ ' + post.title));
-                    newPost.append($('<div>').addClass('content').text(post.comment));
+                    // var newPost = $('<div>').addClass('post');
+                    // newPost.append($('<div>').addClass('title').text(post.displayName));
+                    // newPost.append($('<div>').addClass('meta').text(' ' + post.userName + ' . ' + post.tweetDate ));
+                    // newPost.append($('<div>').addClass('content').text(post.tweetContent));
 
-                    if (post.mediaType === 1) {
+                    var newPost = $('<div>').addClass('post');
+                    var titleDiv = $('<div>').addClass('title');
+                    titleDiv.append(post.displayName); // 添加主标题文本
+                    titleDiv.append($('<div>').addClass('meta').text(' ' + post.userName + ' . ' + post.tweetDate));
+                    // 嵌套 meta 元素
+                    newPost.append(titleDiv);
+                    // 添加标题及其子元素到新帖子容器
+                    newPost.append($('<div>').addClass('content').text(post.tweetContent));
+
+                    if (post.mediaType === 'Video') {
                         // 添加图片缩略图元素，并设置点击事件
                         // var thumbnailElement = $('<a>').addClass('thumbnail').attr('href', post.mediaUrl).attr('data-lightbox', 'image-' + index);
                         // thumbnailElement.append('<img>').addClass('image').attr('src', post.mediaUrl);
                         // thumbnailElement.append('<div>').addClass('thumbnail-text').text('点击查看大图');
                         // newPost.append(thumbnailElement);
 
-                        var aElement = $('<a>').addClass('thumbnail').attr('href', post.mediaUrl).attr('data-lightbox', 'image-' + index);
+                        var aElement = $('<a>').addClass('thumbnail').attr('href', post.localMediaUrl).attr('data-lightbox', 'image-' + index);
                         var imageElement  = $('<img>').addClass('image');
-                        imageElement.attr('src', post.mediaUrl);
+                        imageElement.attr('src', post.localMediaUrl);
                         aElement.append(imageElement);
                         newPost.append(aElement);
-                    } else if (post.mediaType === 2) {
+                    } else if (post.mediaType === 'Image') {
                         // 添加视频缩略图元素，并设置点击事件
                         // var thumbnailElement = $('<div>').addClass('video-thumbnail');
                         // thumbnailElement.append('<img>').addClass('image').attr('src', post.mediaUrl).attr('data-lightbox', 'video-' + index);
                         // thumbnailElement.append('<div>').addClass('play-button').html('<i class="fas fa-play"></i>');
 
                         var videoElement = $('<video>').addClass('video').attr('controls', '');
-                        videoElement.append($('<source>').attr('src', post.mediaUrl).attr('type', 'video/mp4'));
+                        videoElement.append($('<source>').attr('src', post.localMediaUrl).attr('type', 'video/mp4'));
                         videoElement.append('Your browser does not support the video tag.');
                         newPost.append(videoElement);
 
