@@ -1,6 +1,7 @@
 package net.sppan.base.controller.admin;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.StrUtil;
 import net.sppan.base.common.JsonResult;
 import net.sppan.base.controller.BaseController;
 
@@ -39,22 +40,33 @@ public class LoginController extends BaseController {
 			ModelMap model
 			) {
 		try {
-			if(submitType.equals(1)){
-			 Subject subject = SecurityUtils.getSubject();
-			 UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-			subject.login(token);
-			return redirect("/admin/index");
-			}
 			// 登陆类型:1登陆 2创建 3重置密码
-			if(submitType.equals(2)){
-				this.editUser(username,password,request);
+			if(submitType.equals(1)){
+				 Subject subject = SecurityUtils.getSubject();
+				 UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+				subject.login(token);
+				//除了admin能登陆后台，其他登陆网站首页
+				if(username.equals("admin")){
+					return redirect("/admin/index");
+				}
 				return redirect("/index");
 			}
+			// 2创建
+			if(submitType.equals(2)){
+				//创建用户
+				this.editUser(username,password,request);
+				//创建用户后登陆
+				Subject subject = SecurityUtils.getSubject();
+				UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+				subject.login(token);
+				return redirect("/index");
+			}
+			//3重置密码
 			if(submitType.equals(3)){
 				updatePassword(username,password,oldpassword,request);
 
 			}
-		} catch (AuthenticationException e) {
+		} catch (Exception e) {
 			model.put("message", e.getMessage());
 		}
 		return "admin/login";
@@ -109,7 +121,6 @@ public class LoginController extends BaseController {
 		if(exitUser == null){
 			throw new Error( "You are not logged in" );
 		}
-		User user = new User();
 		userService.updatePwd((User)exitUser, oldpassword, password, password);
 
 	}

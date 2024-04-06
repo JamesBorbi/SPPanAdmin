@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -258,7 +258,7 @@
             display: none;
             position: absolute;
             background-color: rgba(249, 249, 249, 0.91);
-            min-width: 45px;
+            min-width: 20px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
@@ -326,27 +326,16 @@
         <div class="user-stats"></div>
         <!-- 下拉菜单 -->
         <div class="dropdown" id="userDropdown">
-            <button class="dropbtn user-stats">X-LOGIN</button>
+            <button class="dropbtn user-stats">
+            <span id="xusername">X-LOGIN</span>
+            </button>
             <div class="dropdown-content">
-                <a href="#" id="loginBtn">Login</a>
-                <a href="#" id="logoutBtn">Quit</a>
-                <a href="#" id="userInfoBtn">Acount</a>
+                <a href="${ctx!}/admin/login" id="Login">Login</a>
+                <a href="${ctx!}/admin/logout" id="Quit">Quit</a>
+                <a href="${ctx!}/admin/logout" id="vip">Vip</a>
             </div>
         </div>
-
-        <!-- 登录表单的容器 -->
-        <div class="modal" id="loginModal" style="display: none;">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>登录</h2>
-                <form id="loginForm">
-                    <input type="text" placeholder="用户名" required>
-                    <input type="password" placeholder="密码" required>
-                    <button type="submit">登录</button>
-                    <p>没有账号？<a href="#" id="registerLink">注册</a></p>
-                </form>
-            </div>
-        </div>
+    </div>
 
     </div>
     <!-- 滚动到此处时，加载更多帖子 -->
@@ -468,6 +457,38 @@
         });
     }
 
+
+
+    //------------------右上角登陆------------------
+    var userName = '<@shiro.principal property="userName"/>';
+    if(userName === ''){
+        $("#xusername").text('X-LOGIN')
+    }else {
+        $("#xusername").text(userName)
+    }
+
+    $("#xusername").click(function() {
+
+        if(userName === ''){
+            $("#xusername").show();
+            $("#Login").show();
+            $("#Quit").hide();
+            $("#vip").hide();
+        }else {
+            $("#xusername").show();
+            $("#Login").hide();
+            $("#Quit").show();
+            $("#vip").show();
+        }
+
+    });
+
+
+
+
+
+
+
 //----------------------------------------------18禁弹窗----------------------------------------------
     // 检查用户是否已经做出选择
     function checkAge() {
@@ -518,69 +539,6 @@
     };
 
 
-    //----------------------------------------------注册登陆----------------------------------------------
-    // 获取下拉菜单和登录表单的元素
-    var dropdown = document.getElementById("userDropdown");
-    var loginModal = document.getElementById("loginModal");
-    var loginForm = document.getElementById("loginForm");
-    var registerLink = document.getElementById("registerLink");
-
-    // 显示登录表单
-    function showLoginModal() {
-        loginModal.style.display = "block";
-    }
-
-    // 隐藏登录表单
-    function hideLoginModal() {
-        loginModal.style.display = "none";
-    }
-
-    // 处理登录表单的提交
-    function handleLogin(e) {
-        e.preventDefault(); // 阻止表单的默认提交行为
-        // 这里添加登录逻辑，例如发送AJAX请求到服务器验证用户信息
-        // ...
-        // 登录成功后，可以隐藏登录表单，并显示用户界面
-        hideLoginModal();
-    }
-
-    // 监听登录表单的提交事件
-    loginForm.addEventListener("submit", handleLogin);
-
-    // 显示注册链接
-    function showRegisterLink() {
-        // 这里添加注册逻辑，例如弹出注册表单或导航到注册页面
-        // ...
-    }
-
-    // 为下拉菜单和登录按钮添加事件监听器
-    dropdown.addEventListener("click", function(event) {
-        event.preventDefault();
-        var dropdownContent = document.getElementById("dropdown-content");
-        if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-        } else {
-            dropdownContent.style.display = "block";
-        }
-    });
-
-    // 为关闭按钮添加事件监听器
-    document.getElementsByClassName("close")[0].addEventListener("click", function() {
-        hideLoginModal();
-    });
-
-    // 为登录按钮添加事件监听器
-    document.getElementById("loginBtn").addEventListener("click", showLoginModal);
-
-    // 为注册链接添加事件监听器
-    registerLink.addEventListener("click", showRegisterLink);
-
-    // 页面加载完成后，检查用户是否已经登录
-    window.onload = function() {
-        // 这里添加检查用户登录状态的逻辑
-        // 如果用户已登录，可以隐藏登录按钮和下拉菜单
-        // ...
-    };
 
 </script>
 </body>

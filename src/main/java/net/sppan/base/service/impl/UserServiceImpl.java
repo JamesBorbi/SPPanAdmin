@@ -82,8 +82,8 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements I
 	@Override
 	public void grant(Integer id, String[] roleIds) {
 		User user = find(id);
-		Assert.notNull(user, "用户不存在");
-		Assert.state(!"admin".equals(user.getUserName()),"超级管理员用户不能修改管理角色");
+		Assert.notNull(user, "User does not exist");
+		Assert.state(!"admin".equals(user.getUserName()),"The super administrator cannot change management roles");
 		Role role;
 		Set<Role> roles = new HashSet<Role>();
 		if(roleIds != null){
@@ -108,16 +108,16 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements I
 	
 	@Override
 	public void updatePwd(User user, String oldPassword, String password1, String password2) {
-		Assert.notNull(user, "用户不能为空");
-		Assert.notNull(oldPassword, "原始密码不能为空");
-		Assert.notNull(password1, "新密码不能为空");
-		Assert.notNull(password2, "重复密码不能为空");
+		Assert.notNull(user, "The user cannot be empty");
+		Assert.notNull(oldPassword, "The original password cannot be empty");
+		Assert.notNull(password1, "The new password cannot be empty");
+		Assert.notNull(password2, "The duplicate password cannot be empty");
 		
 		User dbUser = userDao.findByUserName(user.getUserName());
-		Assert.notNull(dbUser, "用户不存在");
+		Assert.notNull(dbUser, "User does not exist");
 		
-		Assert.isTrue(user.getPassword().equals(MD5Utils.md5(oldPassword)), "原始密码不正确");;
-		Assert.isTrue(password1.equals(password2), "两次密码不一致");
+		Assert.isTrue(user.getPassword().equals(MD5Utils.md5(oldPassword)), "The original password is incorrect");;
+		Assert.isTrue(password1.equals(password2), "Two passwords do not match");
 		dbUser.setPassword(MD5Utils.md5(password1));
 		userDao.saveAndFlush(dbUser);
 	}
