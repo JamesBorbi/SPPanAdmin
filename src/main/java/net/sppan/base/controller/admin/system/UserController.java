@@ -128,7 +128,7 @@ public class UserController extends BaseController {
 			Subject subject = SecurityUtils.getSubject();
 			Object principal = subject.getPrincipal();
 			if(principal== null){
-				return JsonResult.failure("您尚未登录");
+				return JsonResult.failure("You are not logged in");
 			}
 			userService.updatePwd((User)principal, oldPassword, password1, password2);
 		} catch (Exception e) {

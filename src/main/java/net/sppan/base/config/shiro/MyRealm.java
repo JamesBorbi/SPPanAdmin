@@ -77,15 +77,15 @@ public class MyRealm extends AuthorizingRealm {
 
 		// 账号不存在
 		if (user == null) {
-			throw new UnknownAccountException("账号或密码不正确");
+			throw new UnknownAccountException("The account or password is incorrect");
 		}
 		// 密码错误
 		if (!MD5Utils.md5(password).equals(user.getPassword())) {
-			throw new IncorrectCredentialsException("账号或密码不正确");
+			throw new IncorrectCredentialsException("The account or password is incorrect");
 		}
 		// 账号锁定
 		if (user.getLocked() == 1) {
-			throw new LockedAccountException("账号已被锁定,请联系管理员");
+			throw new LockedAccountException("The account has been locked. Please contact the administrator");
 		}
 
 		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user, password, getName());
