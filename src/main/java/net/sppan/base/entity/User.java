@@ -61,7 +61,7 @@ public class User extends BaseEntity {
 	private Integer sex;
 
 	/**
-	 * 出生日期
+	 * 出生日期 (过期日期)
 	 */
 	@JSONField(format = "yyyy-MM-dd")
 	private Date birthday;

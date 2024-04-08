@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">出生日期：</label>
+                                <label class="col-sm-3 control-label">过期日期：</label>
                                 <div class="col-sm-8">
                                     <input id="birthday" name="birthday" readonly="readonly" class="laydate-icon form-control layer-date" value="${user.birthday}">
                                 </div>

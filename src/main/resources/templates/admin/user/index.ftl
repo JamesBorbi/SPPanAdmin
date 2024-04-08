@@ -140,7 +140,7 @@
                         return '<span class="label label-primary">男</span>';
                     }
 			    },{
-			        title: "出生日期",
+			        title: "过期日期",
 			        field: "birthday"
 			    },{
 			        title: "电话",

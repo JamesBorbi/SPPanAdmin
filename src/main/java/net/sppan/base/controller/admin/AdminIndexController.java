@@ -18,4 +18,9 @@ public class AdminIndexController extends BaseController{
 		
 		return "admin/welcome";
 	}
+	@RequestMapping(value = {"/x/vip"})
+	public String vip(){
+
+		return "x/vip";
+	}
 }
